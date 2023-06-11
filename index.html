@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodiac Sign</title>
+    <style type="text/css" media="all">
+        .cont {
+            margin: auto;
+            /* height: calc(100vh - 4rem);
+            width: calc(100vw - 4rem); */
+            border: 1px solid black;
+            border-radius: 1rem;
+            /* padding: 1rem; */
+        }
+        .main {
+            margin: auto;
+            height: calc(100vh - 6rem);
+            width: calc(100vw - 4rem);
+            /* border: 1px solid black;
+            border-radius: 1rem; */
+            padding: 1rem;
+        }
+
+        .main * {
+
+            padding: 0.6rem 0;
+        }
+
+        #date {
+            height: auto;
+            width: auto;
+            font-size: 1.2rem;
+            font-weight: 500;
+            background-color: #ffffff;
+            border-radius: 15px;
+            margin: 1rem;
+            border-color: #ff115f;
+        }
+
+        #month {
+            height: auto;
+            width: auto;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-radius: 15px;
+            background-color: #ffffff;
+            margin: 1rem;
+            border-color: #5fcfff;
+        }
+
+        #ddmm {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            /* gap: 8em; */
+
+
+        }
+
+        .ddmm-cont select {
+            padding: 0.2em 0.8em;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #zodiac {
+
+            border-radius: 0.6rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background-color: #227aff;
+            border: none;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding: 0.2em 0.8em;
+            color: #ffffff;
+            transition: all 0.3s;
+        }
+
+        #zodiac:hover {
+
+            cursor: pointer;
+            background-color: #054bb4;
+
+            color: #c2fdfd;
+
+        }
+
+        #txt {
+
+            font-weight: bold;
+
+            text-align: center;
+        }
+
+        span {
+            font-family: "sans-serif", "Times New Roman", Times, serif;
+            font-style: italic;
+            color: #a081d9;
+            font-size: 3rem;
+        }
+
+        #box {
+            height: 3.5rem;
+            width: 40%;
+            background-color: #dcfcfc;
+            border-radius: 1.5rem;
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        #output {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin: auto;
+        }
+
+        .but-cont {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        footer {
+
+            margin: auto;
+            text-align: center;
+            padding-bottom: 0.4rem;
+        }
+
+        @media only screen and (max-device-width : 640px) {
+
+            .ddmm-cont {
+                display: grid;
+                width: 100%;
+                /* justify-content: space-around; */
+                /* gap: 1em; */
+            }
+
+            span {
+
+                font-size: 2rem;
+            }
+
+            #txt {
+                font-size: 2rem;
+            }
+
+            #zodiac {
+                font-size: 1.6rem;
+                border-width: 8px;
+            }
+            
+            #box {
+            
+            width: 90%;
+           
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <main class="main">
+            <div id="txt">
+                <p><span>Zodiac Sign Checker</span></p>
+            </div>
+            <div id="ddmm">
+                <div class="ddmm-cont">
+                    <select id="date">
+                        <option value="0">Select Date</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+
+                    <select id="month">
+                        <option value="0">Select Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="but-cont">
+                <button id="zodiac" value="" onclick="zodiac()">Check</button>
+            </div>
+
+
+            <div id="box">
+                <p id="output"></p>
+            </div>
+
+
+        </main>
+        <footer>
+            This is a simple tool to check zodiac sign. Source code is on my <a href="">Github</a> repository.
+        </footer>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+
+        function zodiac() {
+
+            let d = document.querySelector("#date").selectedOptions[0].value;
+
+            /*var mon= parseInt(document.getElementById("month").value);*/
+            /*** If the Vars are defined outside of function then for some reason its not getting their value ***/
+
+            let m = document.querySelector('#month').selectedOptions[0].value; /*** Getting the Value and Text/Label of the Selected Options:- 
+The selectedOptions property of the select element gives the list of options that are currently selected. Each element in this list is a DOM <option> element — so you can use the value and text property to get the value and inside text of the option.
+
+// For a normal select (and not multi-select) the list would contain only a single element:-
+
+//The following will get the text inside of option element:-
+
+var text = document.querySelector("#id_name").selectedOptions[0].text;
+
+//The following will get the value of option element:-
+
+var value = document.querySelector("#id_name").selectedOptions[0].value;
+
+***/
+            let out = document.getElementById("output");
+
+            // alert(m);
+            //January
+            if (m == 1) {
+                if (d >= 1 && d <= 19) {
+                    out.innerHTML = "Capricorn";
+                }
+
+                else if (d >= 20 && d <= 31) {
+                    out.innerHTML = "Aquarius";
+                }
+
+                else if (d <= 0 || d > 31) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //February
+            if (m == 2) {
+                if (d >= 19 && d <= 29) {
+                    out.innerHTML = "Pisces";
+                }
+
+                else if (d >= 1 && d <= 18) {
+                    out.innerHTML = "Aquarius";
+                }
+
+                else if (d <= 0 || d > 29) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            // March
+            if (m == 3) {
+                if (d >= 1 && d <= 20) {
+                    out.innerHTML = "Pisces";
+                }
+
+                else if (d >= 21 && d <= 31) {
+                    out.innerHTML = "Aries";
+                }
+
+                else if (d <= 0 || d > 31) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //April
+            if (m == 4) {
+                if (d >= 1 && d <= 19) {
+                    out.innerHTML = "Aries";
+                }
+
+                else if (d >= 20 && d <= 30) {
+                    out.innerHTML = "Taurus";
+                }
+
+                else if (d <= 0 || d > 30) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //May
+            if (m == 5) {
+                if (d >= 1 && d <= 20) {
+                    out.innerHTML = "Taurus";
+                }
+
+                else if (d >= 21 && d <= 31) {
+                    out.innerHTML = "Gemini";
+                }
+
+                else if (d <= 0 || d > 31) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //June
+            if (m == 6) {
+                if (d >= 1 && d <= 21) {
+                    out.innerHTML = "Gemini";
+                }
+
+                else if (d >= 22 && d <= 30) {
+                    out.innerHTML = "Cancer";
+                }
+
+                else if (d <= 0 || d > 30) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //July
+            if (m == 7) {
+                if (d >= 1 && d <= 22) {
+                    out.innerHTML = "Cancer";
+                }
+
+                else if (d >= 23 && d <= 31) {
+                    out.innerHTML = "Leo";
+                }
+
+                else if (d <= 0 || d > 31) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //August
+            if (m == 8) {
+                if (d >= 1 && d <= 22) {
+                    out.innerHTML = "Leo";
+                }
+
+                else if (d >= 23 && d <= 31) {
+                    out.innerHTML = "Virgo";
+                }
+
+                else if (d <= 0 || d > 31) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //September
+            if (m == 9) {
+                if (d >= 1 && d <= 22) {
+                    out.innerHTML = "Virgo";
+                }
+
+                else if (d >= 23 && d <= 30) {
+                    out.innerHTML = "Libra";
+                }
+
+                else if (d <= 0 || d > 30) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //October
+            if (m == 10) {
+                if (d >= 1 && d <= 23) {
+                    out.innerHTML = "Libra";
+                }
+
+                else if (d >= 24 && d <= 31) {
+                    out.innerHTML = "Scorpio";
+                }
+
+                else if (d <= 0 || d > 31) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //November
+            if (m == 11) {
+                if (d >= 1 && d <= 21) {
+                    out.innerHTML = "Scorpio";
+                }
+
+                else if (d >= 22 && d <= 30) {
+                    out.innerHTML = "Sagittarius";
+                }
+
+                else if (d <= 0 || d > 30) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            //December
+            if (m == 12) {
+                if (d >= 1 && d <= 21) {
+                    out.innerHTML = "Sagittarius";
+                }
+
+                else if (d >= 22 && d <= 31) {
+                    out.innerHTML = "Capricorn";
+                }
+
+                else if (d <= 0 || d > 31) {
+                    out.innerHTML = "Check the date again";
+                }
+            }
+
+            if (m <= 0 || m > 12) {
+
+                out.innerHTML = "Select the Month";
+            }
+
+        }
+    /*function check(){
+                var d= parseInt(document.getElementById("date").value);
+            
+            var m= parseInt(document.getElementById("month").value);
+            out.innerHTML=d,m);
+        }*/
+    </script>
+</body>
+
+</html>
